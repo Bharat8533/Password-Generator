@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator ! B-Production</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="shortcut icon" href="./images/logo2.jpg" type="image/x-icon">
+  </head>
+
+    <!-- New Password code -->
+    <nav>
+      <img src="./images/B-production.png" alt="b_production Logo" class="logo">
+    </nav>
+    <div class="container">
+      <div class="password-box">
+        <div class="password-top">
+          <div>
+            <input class="showPassword" id="showPassword" type="text" placeholder="Your Password" readonly/>
+            <i class="fa-regular fa-copy" id="copyBtn"></i>
+              <!-- <span class="copy-icon"><i class="remixicon insta size-56" id="copyBtn"></i></span> -->
+              <span class="copyText" id="copyText"></span>
+
+            
+          </div>
+        </div>
+        <div class="password-bottom">
+          <div class="password-length">
+            <h3>Your Password Length</h3>
+            <div id="passwordLengthDisplay"></div>
+          </div>
+          <input type="range" id="slider" step="1" name="slider" min="4" max="20">
+          <div class="options-box">
+            <div class="first-option-box">
+              <div>
+                <input class="inputCheck" type="checkbox" id="uppercase">
+                <label for="uppercase">Uppercase</label>
+              </div>
+              <div>
+                <input class="inputCheck" type="checkbox" id="lowercase">
+                <label for="lowercase">Lowercase</label>
+              </div>
+            </div>
+            <div class="second-option-box">
+              <div>
+                <input class="inputCheck" value="off" type="checkbox" id="number">
+                <label for="number">Number</label>
+              </div>
+              <div>
+                <input class="inputCheck" type="checkbox" id="symbols">
+                <label for="symbols">Symbol</label>
+              </div>
+            </div>
+          </div>
+          <div class="strength-box">
+            <h3>Password Strength</h3>
+            <div id="strength"></div>
+          </div>
+          <div class="entroph-box">
+            <h3>Entropy</h3>
+            <div id="entroph"></div>
+          </div>
+          <button id="button">Generate Password</button>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script> 
+  </body>
+</html>

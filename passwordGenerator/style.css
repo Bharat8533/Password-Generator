@@ -1,0 +1,301 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body{
+  width: 100%;
+  height: 100%;
+  
+}
+:root{
+  --text-color : #868686;
+}
+nav{
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem 2rem ;
+}
+.logo{
+  width: 8rem;
+  height: 4rem;
+  position: relative;
+}
+nav::before{
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #6f7af2;
+  position: absolute; 
+  top: 3.5rem; 
+  left: 8.5rem;
+  display: block; 
+  /* z-index: -1; */
+  filter: blur(20px);
+  /* opacity: 0.6; */
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* height: calc(100% - 100px); */
+  height: 100%;
+  background: #F5F5F5;
+}
+
+.password-box{
+  width: 400px;
+  height: 500px;
+  /* background: #000; */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.password-box .password-top{
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background: #E9EBFF;
+  display: flex;
+  align-items: center;
+  padding: 1rem 0.5rem;
+  border: 1px solid #868686;
+}
+.password-box .password-top div{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .1rem;
+}
+.password-box .password-top div input{
+  width: 100%;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  background: #D9D9D9;
+  padding: .4rem .8rem;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  color: var(--text-color);
+  box-shadow: 0 0 20px #fff;
+  border: 1px solid white;
+  font-size: 20px;
+}
+.password-box .password-top div input::placeholder{
+  color: #868686;
+}
+.password-box .password-top div i{
+  /* position: relative; */
+  background: #D9D9D9;
+  padding: .4rem .8rem;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  color: var(--text-color);
+  cursor: pointer;
+  border: 1px solid white;
+  box-shadow: 0 0 20px #fff;
+  transition: all 0.2s ease;
+  font-size: 23.5px;
+}
+.password-box .password-top div i:hover{
+  color: #fff;
+  background: #4a04ec;
+}
+
+.password-top div .copyText{
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+  transform: translate(50px, -30px);
+  background: #4a04ec;
+  color: #fff;
+  padding: .3rem .5rem;
+  border-radius: 20px;
+  width: fit-content;
+  box-shadow: 0 0 10px gray;
+}
+.password-top div .copyText.show{
+  display: block;
+}
+.password-box .password-bottom{
+  width: 100%;
+  background: #E9EBFF;
+  padding: .8rem .8rem;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid #868686;
+}
+
+.password-bottom .password-length{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2rem .5rem;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+h3{
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.password-bottom #slider{
+  appearance: none;
+  background: none;
+  background-color: var(--text-color);
+  /* background: #D9D9D9; */
+  width: 100%;
+  height: .5rem;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #4a04ec 50%, #04ecd9);
+  background-repeat: no-repeat;
+  border:none;
+   outline:none;
+    /* z-index:-1; */
+}
+
+.password-bottom #slider::-webkit-slider-thumb{
+  position:relative;
+  z-index:100; 
+  appearance: none; 
+  border: none;
+  width: 20px;
+  height: 20px;
+  background: #4a04ec;
+  border-radius: 50%;
+  scroll-behavior: smooth;
+  box-shadow: 0 0 10px black;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.password-bottom #slider::-webkit-slider-thumb:hover{
+  /* background: #3502ab; */
+  /* box-shadow: none; */
+  width: 24px;
+  height: 24px;
+}
+
+.password-bottom .options-box{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0.2rem ;
+}
+
+.options-box .first-option-box, .second-option-box{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.2rem;
+}
+.first-option-box div, .second-option-box div{
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  gap: .4rem;
+  cursor: pointer;
+  /* background: #000; */
+}
+.first-option-box div label, .second-option-box div label{
+  cursor: pointer;
+}
+.inputCheck{
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--text-color);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.inputCheck.click{
+  background: #4a04ec;
+}
+.inputCheck.click::after{
+  content: "✔";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  transform: translate(2px, -10px) rotate(10deg);
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.password-bottom .strength-box , .entroph-box{
+  /* margin: .5rem 0rem; */
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.2rem .5rem;
+  font-weight: 800;
+  font-size: 24px;
+}
+.password-bottom .strength-box #strength{
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 10px #fff;
+  transform: translate(0px, 5px);
+}
+.password-bottom button{
+  appearance: none;
+  border: none;
+  background: none;
+  width: 100%;
+  /* margin: 1rem 0rem; */
+  background: #4a04ec;
+  padding: 0.5rem;
+  color: #fff;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.password-bottom button:hover{
+  background: #3b01c1;
+}
+
+
+@media only screen and (max-width : 450px) {
+  nav {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem 0.5rem;
+}
+  .logo {
+    width: 6rem;
+    height: 3rem;
+    position: relative;
+}
+  nav::before {
+    content: "";
+    width: 1.5rem;
+    height: 1.5rem;
+    background: #6f7af2;
+    position: absolute;
+    top: 3rem;
+    left: 5.5rem;
+    display: block;
+    /* z-index: -1; */
+    filter: blur(20px);
+    /* opacity: 0.6; */
+}
+.container{
+  height: calc(100% - 100px);
+}
+}
